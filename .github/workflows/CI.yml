@@ -19,3 +19,12 @@ jobs:
 
     - name: Rodar pytest
       run: pytest
+
+    - name: Run Codecov
+      run: coverage run -m pytest
+
+    - name: Upload Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: 7f69f8c8-605b-466e-ab65-2c88ded8e669
+
