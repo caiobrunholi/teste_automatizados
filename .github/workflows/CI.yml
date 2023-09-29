@@ -17,8 +17,5 @@ jobs:
     - name: Instalar dependências
       run: pip install pytest
 
-    - name: Acessar pasta
-      run: cd TDD
-
     - name: Rodar pytest
       run: pytest
