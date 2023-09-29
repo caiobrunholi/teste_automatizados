@@ -17,5 +17,5 @@ jobs:
     - name: Instalar dependências
       run: pip install pytest
 
-    - names: Rodar pytest
+    - name: Rodar pytest
       run: pytest
