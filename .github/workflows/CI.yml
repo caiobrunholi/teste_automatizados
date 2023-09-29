@@ -1,0 +1,30 @@
+name: Testes Automatizados
+
+on: [push]
+
+jobs: 
+  testes: 
+    name: Testes TDD 
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Checkou Código
+      uses: actions/checkout@v2
+
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+
+    - name: Instalar dependências
+      run: pip install pytest coverage
+
+    - name: Rodar pytest
+      run: pytest
+
+    - name: Run Codecov
+      run: coverage run -m pytest
+
+    - name: Upload Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: 7f69f8c8-605b-466e-ab65-2c88ded8e669
+
