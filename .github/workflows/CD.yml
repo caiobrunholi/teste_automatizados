@@ -1,0 +1,24 @@
+name: CD - AWS
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs: 
+  deploy: 
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Checkou Código
+      uses: actions/checkout@v2
+    
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-asw-credential@v1
+      with:
+        aws-access-key-id: AKIAUOEDMOSVYOJQFJ5D
+        aws-secret-access-key: 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
+        aws-region: sa-east-1
+    
+    - name: Arquivos para o AWS S3
+      run: aws s3 sync . s3://testesautomatizadoscb
