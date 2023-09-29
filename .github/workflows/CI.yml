@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-python@v2
 
     - name: Instalar dependências
-      run: pip install pytest
+      run: pip install pytest coverage
 
     - name: Rodar pytest
       run: pytest
